@@ -1,0 +1,42 @@
+[gd_scene load_steps=4 format=3]
+
+[ext_resource type="Script" path="res://scripts/player.gd" id="1_player"]
+[ext_resource type="Resource" path="res://resources/pistol.tres" id="2_pistol"]
+
+[sub_resource type="RectangleShape2D" id="Rect_body"]
+size = Vector2(12, 14)
+
+[node name="Player" type="CharacterBody2D" groups=["player"]]
+collision_layer = 1
+collision_mask = 12
+script = ExtResource("1_player")
+weapon = ExtResource("2_pistol")
+
+[node name="Body" type="Polygon2D" parent="."]
+color = Color(0.29, 0.7, 0.4, 1)
+polygon = PackedVector2Array(-6, -8, 6, -8, 6, 8, -6, 8)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("Rect_body")
+
+[node name="Hurtbox" type="Area2D" parent="."]
+collision_layer = 16
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox"]
+shape = SubResource("Rect_body")
+
+[node name="AimPivot" type="Node2D" parent="."]
+
+[node name="Barrel" type="Polygon2D" parent="AimPivot"]
+color = Color(0.88, 0.9, 0.95, 1)
+polygon = PackedVector2Array(2, -2, 14, -2, 14, 2, 2, 2)
+
+[node name="Muzzle" type="Marker2D" parent="AimPivot"]
+position = Vector2(15, 0)
+
+[node name="Flash" type="Polygon2D" parent="AimPivot"]
+visible = false
+position = Vector2(15, 0)
+color = Color(1, 0.95, 0.7, 1)
+polygon = PackedVector2Array(0, -4, 9, 0, 0, 4)

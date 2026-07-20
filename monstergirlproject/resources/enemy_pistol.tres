@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="Weapon" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/weapon.gd" id="1_weapon"]
+
+[resource]
+script = ExtResource("1_weapon")
+display_name = "Enemy Pistol"
+damage = 1
+shots_per_second = 0.8
+auto_fire = true
+projectile_count = 1
+spread_degrees = 6.0
+projectile_speed = 150.0
+projectile_range = 500.0
+projectile_radius = 4.0
+projectile_color = Color(1, 0.35, 0.45, 1)
+knockback = 60.0
+recoil = 0.0
+screen_shake = 0.0

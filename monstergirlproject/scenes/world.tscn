@@ -1,0 +1,106 @@
+[gd_scene format=3 uid="uid://bv5rcc87ajauh"]
+
+[ext_resource type="PackedScene" path="res://scenes/player.tscn" id="1_player"]
+[ext_resource type="PackedScene" path="res://scenes/enemy.tscn" id="2_enemy"]
+[ext_resource type="Resource" path="res://resources/shotgun.tres" id="2_qfnet"]
+[ext_resource type="Script" uid="uid://vq4qt0ieplwo" path="res://scripts/hud.gd" id="3_hud"]
+[ext_resource type="Resource" path="res://resources/enemy_pistol.tres" id="4_enemy_gun"]
+[ext_resource type="Script" uid="uid://cib5frk7s82bw" path="res://scripts/camera.gd" id="5_camera"]
+
+[sub_resource type="RectangleShape2D" id="Rect_h"]
+size = Vector2(640, 16)
+
+[sub_resource type="RectangleShape2D" id="Rect_v"]
+size = Vector2(16, 360)
+
+[node name="World" type="Node2D" unique_id=528330891]
+
+[node name="Floor" type="Polygon2D" parent="." unique_id=1875722354]
+color = Color(0.16, 0.18, 0.22, 1)
+polygon = PackedVector2Array(0, 0, 640, 0, 640, 360, 0, 360)
+
+[node name="WallTop" type="StaticBody2D" parent="." unique_id=1049840964]
+position = Vector2(320, 8)
+collision_layer = 4
+collision_mask = 0
+
+[node name="Art" type="Polygon2D" parent="WallTop" unique_id=1231294467]
+color = Color(0.36, 0.33, 0.42, 1)
+polygon = PackedVector2Array(-320, -8, 320, -8, 320, 8, -320, 8)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WallTop" unique_id=1419862333]
+shape = SubResource("Rect_h")
+
+[node name="WallBottom" type="StaticBody2D" parent="." unique_id=2090164522]
+position = Vector2(320, 352)
+collision_layer = 4
+collision_mask = 0
+
+[node name="Art" type="Polygon2D" parent="WallBottom" unique_id=1340334616]
+color = Color(0.36, 0.33, 0.42, 1)
+polygon = PackedVector2Array(-320, -8, 320, -8, 320, 8, -320, 8)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WallBottom" unique_id=2087003324]
+shape = SubResource("Rect_h")
+
+[node name="WallLeft" type="StaticBody2D" parent="." unique_id=830384168]
+position = Vector2(8, 180)
+collision_layer = 4
+collision_mask = 0
+
+[node name="Art" type="Polygon2D" parent="WallLeft" unique_id=1805985282]
+color = Color(0.36, 0.33, 0.42, 1)
+polygon = PackedVector2Array(-8, -180, 8, -180, 8, 180, -8, 180)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WallLeft" unique_id=2071361938]
+shape = SubResource("Rect_v")
+
+[node name="WallRight" type="StaticBody2D" parent="." unique_id=597386682]
+position = Vector2(632, 180)
+collision_layer = 4
+collision_mask = 0
+
+[node name="Art" type="Polygon2D" parent="WallRight" unique_id=314412149]
+color = Color(0.36, 0.33, 0.42, 1)
+polygon = PackedVector2Array(-8, -180, 8, -180, 8, 180, -8, 180)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WallRight" unique_id=1649394177]
+shape = SubResource("Rect_v")
+
+[node name="Player" parent="." unique_id=1840783733 instance=ExtResource("1_player")]
+position = Vector2(320, 180)
+weapon = ExtResource("2_qfnet")
+
+[node name="Charger" parent="." unique_id=1442705242 instance=ExtResource("2_enemy")]
+position = Vector2(140, 90)
+
+[node name="Charger2" parent="." unique_id=39891585 instance=ExtResource("2_enemy")]
+position = Vector2(500, 110)
+
+[node name="Charger3" parent="." unique_id=431651652 instance=ExtResource("2_enemy")]
+position = Vector2(160, 280)
+
+[node name="Shooter" parent="." unique_id=1337150990 instance=ExtResource("2_enemy")]
+position = Vector2(520, 285)
+speed = 40.0
+weapon = ExtResource("4_enemy_gun")
+
+[node name="Shooter2" parent="." unique_id=1837604011 instance=ExtResource("2_enemy")]
+position = Vector2(320, 60)
+speed = 40.0
+weapon = ExtResource("4_enemy_gun")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=2003090828 groups=["camera"]]
+position = Vector2(320, 180)
+script = ExtResource("5_camera")
+
+[node name="HUD" type="CanvasLayer" parent="." unique_id=1294556854]
+
+[node name="Health" type="Label" parent="HUD" unique_id=2063046209]
+offset_left = 12.0
+offset_top = 8.0
+offset_right = 300.0
+offset_bottom = 34.0
+theme_override_colors/font_color = Color(0.9, 0.92, 0.95, 1)
+text = "HP"
+script = ExtResource("3_hud")
