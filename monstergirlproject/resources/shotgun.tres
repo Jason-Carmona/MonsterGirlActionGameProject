@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="Weapon" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/weapon.gd" id="1_weapon"]
+
+[resource]
+script = ExtResource("1_weapon")
+display_name = "Shotgun"
+damage = 1
+shots_per_second = 1.4
+auto_fire = false
+projectile_count = 6
+spread_degrees = 38.0
+projectile_speed = 330.0
+projectile_range = 190.0
+projectile_radius = 2.5
+projectile_color = Color(1, 0.65, 0.35, 1)
+knockback = 200.0
+recoil = 260.0
+screen_shake = 0.55
