@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bv5rcc87ajauh"]
 
-[ext_resource type="PackedScene" path="res://scenes/player.tscn" id="1_player"]
+[ext_resource type="PackedScene" uid="uid://3nnf0objt4lk" path="res://scenes/player.tscn" id="1_player"]
 [ext_resource type="PackedScene" path="res://scenes/enemy.tscn" id="2_enemy"]
 [ext_resource type="Resource" path="res://resources/shotgun.tres" id="2_qfnet"]
 [ext_resource type="Script" uid="uid://vq4qt0ieplwo" path="res://scripts/hud.gd" id="3_hud"]

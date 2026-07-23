@@ -32,7 +32,7 @@ enum State { MOVE, DODGE }
 @onready var aim_pivot: Node2D = $AimPivot
 @onready var muzzle: Marker2D = $AimPivot/Muzzle
 @onready var flash: Polygon2D = $AimPivot/Flash
-@onready var body_art: Polygon2D = $Body
+@onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
 
 ## Movement and impulse are tracked separately, then summed into `velocity`
 ## each frame. Keeping them apart is what stops the movement code from
@@ -84,15 +84,39 @@ func _process_move(delta: float) -> void:
 	if Input.is_action_just_pressed("dodge") and dodge_ready:
 		_start_dodge()
 		return
-
+	var was_moving := false
 	var input_dir := Input.get_vector("move_left", "move_right", "move_up", "move_down")
 	if input_dir != Vector2.ZERO:
 		move_velocity = move_velocity.move_toward(input_dir * SPEED, ACCELERATION * delta)
+		was_moving = true
 	else:
 		move_velocity = move_velocity.move_toward(Vector2.ZERO, FRICTION * delta)
-
+	
+	_update_animation_4_direction(was_moving, input_dir)
+	
 	_try_shoot()
 
+func _update_animation_4_direction(is_moving: bool, direction: Vector2)-> void:
+	if state == State.DODGE:
+		return
+	
+	var dir_string := _get_direction_string(direction)
+	
+	sprite.play(dir_string)
+	
+	_last_direction = dir_string
+	
+var _last_direction := "idle"
+	
+func _get_direction_string(direction: Vector2) -> String:
+		if abs(direction.x) == abs(direction.y):
+			return "idle"
+		if abs(direction.x) > abs(direction.y):
+			return "move_right" if direction.x > 0 else "move_left"
+		else:
+			return "move_down" if direction.y > 0 else "move_up"
+	
+	
 
 # ── SHOOTING ──────────────────────────────────────────────────────────────
 
@@ -145,7 +169,6 @@ func _start_dodge() -> void:
 	invulnerable = true
 	move_velocity = dir * DODGE_SPEED
 	impulse = Vector2.ZERO  # A dodge should always go where you aimed it.
-	body_art.color = Color(0.55, 0.8, 1.0)  # Visual tell that you're immune.
 
 	await get_tree().create_timer(DODGE_DURATION).timeout
 	_end_dodge()
@@ -153,7 +176,6 @@ func _start_dodge() -> void:
 
 func _end_dodge() -> void:
 	state = State.MOVE
-	body_art.color = Color(0.29, 0.7, 0.4)
 	if not _is_hit_invulnerable():
 		invulnerable = false
 
@@ -192,8 +214,6 @@ func take_damage(amount: int, from_position: Vector2) -> void:
 func _flash(duration: float) -> void:
 	var tween := create_tween()
 	tween.set_loops(int(duration / 0.12))
-	tween.tween_property(body_art, "modulate:a", 0.25, 0.06)
-	tween.tween_property(body_art, "modulate:a", 1.0, 0.06)
 
 
 func _die() -> void:

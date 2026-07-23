@@ -1,41 +1,180 @@
-[gd_scene load_steps=4 format=3]
+[gd_scene format=3 uid="uid://3nnf0objt4lk"]
 
-[ext_resource type="Script" path="res://scripts/player.gd" id="1_player"]
+[ext_resource type="Script" uid="uid://cfa3neejw1qi7" path="res://scripts/player.gd" id="1_player"]
 [ext_resource type="Resource" path="res://resources/pistol.tres" id="2_pistol"]
+[ext_resource type="Texture2D" uid="uid://c2y858p5qp5sm" path="res://textures/mgg_playchar.png" id="3_qhqgy"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dqkch"]
+atlas = ExtResource("3_qhqgy")
+region = Rect2(41, 0, 19, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qlg0r"]
+atlas = ExtResource("3_qhqgy")
+region = Rect2(22, 0, 19, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tuyoq"]
+atlas = ExtResource("3_qhqgy")
+region = Rect2(41, 0, 19, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fjrip"]
+atlas = ExtResource("3_qhqgy")
+region = Rect2(60, 0, 19, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_smehm"]
+atlas = ExtResource("3_qhqgy")
+region = Rect2(22, 64, 19, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ur7pv"]
+atlas = ExtResource("3_qhqgy")
+region = Rect2(41, 64, 19, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y4r1p"]
+atlas = ExtResource("3_qhqgy")
+region = Rect2(60, 64, 19, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d2wvv"]
+atlas = ExtResource("3_qhqgy")
+region = Rect2(22, 32, 19, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3v2ag"]
+atlas = ExtResource("3_qhqgy")
+region = Rect2(41, 32, 19, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jej6c"]
+atlas = ExtResource("3_qhqgy")
+region = Rect2(60, 32, 19, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f1ej7"]
+atlas = ExtResource("3_qhqgy")
+region = Rect2(22, 96, 19, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oprun"]
+atlas = ExtResource("3_qhqgy")
+region = Rect2(41, 96, 19, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a8ls1"]
+atlas = ExtResource("3_qhqgy")
+region = Rect2(60, 96, 19, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_q047a"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dqkch")
+}],
+"loop": 1,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qlg0r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tuyoq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fjrip")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tuyoq")
+}],
+"loop": 1,
+"name": &"move_down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_smehm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ur7pv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y4r1p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ur7pv")
+}],
+"loop": 1,
+"name": &"move_left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d2wvv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3v2ag")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jej6c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3v2ag")
+}],
+"loop": 1,
+"name": &"move_right",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f1ej7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oprun")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a8ls1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oprun")
+}],
+"loop": 1,
+"name": &"move_up",
+"speed": 5.0
+}]
 
 [sub_resource type="RectangleShape2D" id="Rect_body"]
 size = Vector2(12, 14)
 
-[node name="Player" type="CharacterBody2D" groups=["player"]]
-collision_layer = 1
+[node name="Player" type="CharacterBody2D" unique_id=2137809458 groups=["player"]]
 collision_mask = 12
 script = ExtResource("1_player")
 weapon = ExtResource("2_pistol")
 
-[node name="Body" type="Polygon2D" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=37459172]
+position = Vector2(-1, -2)
+sprite_frames = SubResource("SpriteFrames_q047a")
+animation = &"idle"
+frame_progress = 0.6503103
+
+[node name="Body" type="Polygon2D" parent="." unique_id=248249045]
+visible = false
 color = Color(0.29, 0.7, 0.4, 1)
 polygon = PackedVector2Array(-6, -8, 6, -8, 6, 8, -6, 8)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=421567696]
 shape = SubResource("Rect_body")
 
-[node name="Hurtbox" type="Area2D" parent="."]
+[node name="Hurtbox" type="Area2D" parent="." unique_id=1664579705]
 collision_layer = 16
 collision_mask = 0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox" unique_id=1625724568]
+visible = false
 shape = SubResource("Rect_body")
 
-[node name="AimPivot" type="Node2D" parent="."]
+[node name="AimPivot" type="Node2D" parent="." unique_id=1470527359]
 
-[node name="Barrel" type="Polygon2D" parent="AimPivot"]
+[node name="Barrel" type="Polygon2D" parent="AimPivot" unique_id=216556530]
 color = Color(0.88, 0.9, 0.95, 1)
 polygon = PackedVector2Array(2, -2, 14, -2, 14, 2, 2, 2)
 
-[node name="Muzzle" type="Marker2D" parent="AimPivot"]
+[node name="Muzzle" type="Marker2D" parent="AimPivot" unique_id=750317494]
 position = Vector2(15, 0)
 
-[node name="Flash" type="Polygon2D" parent="AimPivot"]
+[node name="Flash" type="Polygon2D" parent="AimPivot" unique_id=1059920545]
 visible = false
 position = Vector2(15, 0)
 color = Color(1, 0.95, 0.7, 1)
