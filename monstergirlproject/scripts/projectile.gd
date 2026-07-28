@@ -29,6 +29,8 @@ func configure(weapon: Weapon, dir: Vector2, hostile: bool) -> void:
 	radius = weapon.projectile_radius
 	rotation = direction.angle()
 
+	# Neither mask includes `cover` (128) — that's what lets shots cross tables
+	# and other waist-high geometry that still blocks bodies.
 	if hostile:
 		collision_layer = 64      # enemy_bullet
 		collision_mask = 16 | 4   # player_hurtbox | wall

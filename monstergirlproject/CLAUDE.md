@@ -37,6 +37,21 @@ pivot node, rotated to `facing.angle()`, tweened through an arc.
   speed gap between `enemy_pistol.tres` and `pistol.tres`.
 - **Enemy shots telegraph.** A flash precedes every enemy shot so it's
   reactable rather than a gotcha.
+- **Enemies sleep until they see you.** Both gates matter: inside
+  `AGGRO_RANGE` *and* a clear sightline. Range stops a long corridor waking
+  everything on it; sight lets you slip past along a wall. Waking shouts one
+  hop to nearby sleepers, which
+  approximates a room until real rooms exist (roadmap item 4). Assign a
+  `Path2D` to an enemy's `patrol_path` and it walks that route while asleep.
+  Aggro is one-way — a woken enemy never returns to its patrol.
+- **Shooters advance and plant.** They walk you down at `SHOOTER_ADVANCE` of
+  their speed, freeze for the telegraph and the shot, then walk again during
+  the cooldown. That walk-stop-fire beat *is* the archetype — the ground they
+  give up while planted is the only spacing there is, so don't add a
+  hold-at-range band back without rethinking the whole rhythm.
+- **Enemies steer, they don't path.** Three whiskers to round a corner, no
+  navmesh. If a room ever needs real pathfinding that's a `NavigationAgent2D`,
+  not more whiskers.
 
 ## Conventions
 
@@ -54,7 +69,7 @@ pivot node, rotated to `facing.angle()`, tweened through an arc.
 - Toggle `monitoring` and `disabled` with `set_deferred` — physics state can't
   change mid-step.
 - One `enemy.gd` covers both archetypes: no `weapon` means it charges, a
-  `weapon` means it holds range and shoots. Configure per-instance in the
+  `weapon` means it advances and plants to shoot. Configure per-instance in the
   Inspector, don't fork the script.
 
 ## Collision layers
@@ -63,11 +78,16 @@ pivot node, rotated to `facing.angle()`, tweened through an arc.
 | --- | --- | --- | --- |
 | 1 | 1 | player | Player body |
 | 2 | 2 | enemy_hurtbox | What player bullets look for |
-| 3 | 4 | wall | Static geometry; stops all bullets |
+| 3 | 4 | wall | Full-height geometry; stops all bullets |
 | 4 | 8 | enemy_body | Enemy physics |
 | 5 | 16 | player_hurtbox | What enemy bullets look for |
 | 6 | 32 | player_bullet | |
 | 7 | 64 | enemy_bullet | |
+| 8 | 128 | cover | Waist-high geometry; blocks bodies, bullets pass over |
+
+Cover is what makes a table different from a wall: bodies collide, bullets
+don't. Bullet masks deliberately omit bit 8 — adding it there turns every table
+back into a wall. Assign it in the TileSet's **physics layer 1**, not layer 0.
 
 ## Layout
 

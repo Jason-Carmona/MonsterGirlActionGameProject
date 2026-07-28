@@ -6,7 +6,7 @@
 script = ExtResource("1_weapon")
 display_name = "Enemy Pistol"
 damage = 1
-shots_per_second = 0.8
+shots_per_second = 1.5
 auto_fire = true
 projectile_count = 1
 spread_degrees = 6.0
