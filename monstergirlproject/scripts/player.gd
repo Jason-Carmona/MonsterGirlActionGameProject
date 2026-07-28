@@ -85,7 +85,7 @@ func _process_move(delta: float) -> void:
 		_start_dodge()
 		return
 	var was_moving := false
-	var input_dir := Input.get_vector("move_left", "move_right", "move_up", "move_down")
+	var input_dir := Input.get_vector("walk_left", "walk_right", "walk_up", "walk_down")
 	if input_dir != Vector2.ZERO:
 		move_velocity = move_velocity.move_toward(input_dir * SPEED, ACCELERATION * delta)
 		was_moving = true
@@ -112,9 +112,9 @@ func _get_direction_string(direction: Vector2) -> String:
 		if abs(direction.x) == abs(direction.y):
 			return "idle"
 		if abs(direction.x) > abs(direction.y):
-			return "move_right" if direction.x > 0 else "move_left"
+			return "walk_right" if direction.x > 0 else "walk_left"
 		else:
-			return "move_down" if direction.y > 0 else "move_up"
+			return "walk_down" if direction.y > 0 else "walk_up"
 	
 	
 
