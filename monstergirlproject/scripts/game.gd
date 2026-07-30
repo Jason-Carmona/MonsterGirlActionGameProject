@@ -1,7 +1,6 @@
 extends Node
 
 ## Autoloaded as `Game` — global helpers available from any script.
-
 const PROJECTILE := preload("res://scenes/projectile.tscn")
 
 

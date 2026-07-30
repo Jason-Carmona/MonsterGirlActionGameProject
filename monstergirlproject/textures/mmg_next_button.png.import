@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dwjxjn7qrxeml"
-path="res://.godot/imported/mgg_playchar_idle.png-64c395322f74093ad6b3ec81de0cf107.ctex"
+uid="uid://bnbvuvh1wwpql"
+path="res://.godot/imported/mmg_next_button.png-8c64ac1b1e1a721ef5d9c78b928caae6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scenes/mgg_playchar_idle.png"
-dest_files=["res://.godot/imported/mgg_playchar_idle.png-64c395322f74093ad6b3ec81de0cf107.ctex"]
+source_file="res://textures/mmg_next_button.png"
+dest_files=["res://.godot/imported/mmg_next_button.png-8c64ac1b1e1a721ef5d9c78b928caae6.ctex"]
 
 [params]
 

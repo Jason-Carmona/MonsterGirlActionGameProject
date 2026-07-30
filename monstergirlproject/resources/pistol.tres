@@ -1,19 +1,7 @@
-[gd_resource type="Resource" script_class="Weapon" load_steps=2 format=3]
+[gd_resource type="Resource" script_class="Weapon" format=3 uid="uid://b2dh2gn3luhpn"]
 
-[ext_resource type="Script" path="res://scripts/weapon.gd" id="1_weapon"]
+[ext_resource type="Script" uid="uid://bsq2h0hnfuqy" path="res://scripts/weapon.gd" id="1_weapon"]
 
 [resource]
 script = ExtResource("1_weapon")
-display_name = "Pistol"
-damage = 1
-shots_per_second = 5.0
-auto_fire = true
-projectile_count = 1
-spread_degrees = 3.0
-projectile_speed = 380.0
-projectile_range = 420.0
-projectile_radius = 3.0
-projectile_color = Color(1, 0.9, 0.4, 1)
-knockback = 90.0
-recoil = 70.0
 screen_shake = 0.2

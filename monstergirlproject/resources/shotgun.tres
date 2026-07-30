@@ -1,11 +1,10 @@
-[gd_resource type="Resource" script_class="Weapon" load_steps=2 format=3]
+[gd_resource type="Resource" script_class="Weapon" format=3 uid="uid://dvhok5po88lc3"]
 
-[ext_resource type="Script" path="res://scripts/weapon.gd" id="1_weapon"]
+[ext_resource type="Script" uid="uid://bsq2h0hnfuqy" path="res://scripts/weapon.gd" id="1_weapon"]
 
 [resource]
 script = ExtResource("1_weapon")
 display_name = "Shotgun"
-damage = 1
 shots_per_second = 1.4
 auto_fire = false
 projectile_count = 6

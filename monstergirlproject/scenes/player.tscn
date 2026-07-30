@@ -404,7 +404,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="Rect_body"]
-size = Vector2(26, 31)
+size = Vector2(25, 31)
 
 [node name="Player" type="CharacterBody2D" unique_id=2137809458 groups=["player"]]
 collision_mask = 12
@@ -422,7 +422,7 @@ color = Color(0.29, 0.7, 0.4, 1)
 polygon = PackedVector2Array(-6, -8, 6, -8, 6, 8, -6, 8)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=421567696]
-position = Vector2(0, 5.5)
+position = Vector2(-0.5, 5.5)
 shape = SubResource("Rect_body")
 
 [node name="Hurtbox" type="Area2D" parent="." unique_id=1664579705]
