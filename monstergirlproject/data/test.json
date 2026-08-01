@@ -1,0 +1,35 @@
+[
+	{
+		"speaker": "Poop-Sama",
+		"text": "Hili its super duper nice to meet you! I'm Poop-Sama. Pleased to be at your service.",
+		"portrait": "res://textures/visualnovel/poop_sama_happy.png"
+	},
+	{
+		"speaker": "Poop-Sama",
+		"text": "Would you like to come into my store and buy some of my wares?",
+		"portrait": "res://textures/visualnovel/poop_sama_shop.png"
+	},
+	{
+		"speaker": "",
+		"text": "Choose wisely:",
+		"portrait": ""
+	},
+	{
+		"choices": [
+			{"id": "choice_yes", "text": "Yes! Show me your wares!"},
+			{"id": "choice_no", "text": "No thanks, I'm broke."}
+		]
+	},
+	{
+		"id": "choice_yes",
+		"speaker": "Poop-Sama",
+		"text": "Excellent choice! Everything here is 50% off just for you!",
+		"portrait": "res://textures/visualnovel/poop_sama_excited.png"
+	},
+	{
+		"id": "choice_no",
+		"speaker": "Poop-Sama",
+		"text": "That's okay... maybe next time! *cries in poop*",
+		"portrait": "res://textures/visualnovel/poop_sama_sad.png"
+	}
+]

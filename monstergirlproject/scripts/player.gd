@@ -112,9 +112,9 @@ func _get_direction_string(direction: Vector2) -> String:
 		if abs(direction.x) == abs(direction.y):
 			return "idle"
 		if abs(direction.x) > abs(direction.y):
-			return "walk_right" if direction.x > 0 else "walk_left"
+			return "move_right" if direction.x > 0 else "move_left"
 		else:
-			return "walk_down" if direction.y > 0 else "walk_up"
+			return "move_down" if direction.y > 0 else "move_up"
 	
 	
 

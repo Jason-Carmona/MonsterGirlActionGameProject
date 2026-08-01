@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://3nnf0objt4lk"]
 
 [ext_resource type="Script" uid="uid://cfa3neejw1qi7" path="res://scripts/player.gd" id="1_player"]
-[ext_resource type="Resource" path="res://resources/pistol.tres" id="2_pistol"]
+[ext_resource type="Resource" uid="uid://b2dh2gn3luhpn" path="res://resources/pistol.tres" id="2_pistol"]
 [ext_resource type="Texture2D" uid="uid://6siyunya1fw8" path="res://textures/mgg_playchar_sheet.png" id="3_sheet"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_idle_0"]
@@ -47,50 +47,6 @@ region = Rect2(288, 0, 32, 48)
 [sub_resource type="AtlasTexture" id="AtlasTexture_idle_10"]
 atlas = ExtResource("3_sheet")
 region = Rect2(320, 0, 32, 48)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_move_up_0"]
-atlas = ExtResource("3_sheet")
-region = Rect2(0, 48, 32, 48)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_move_up_1"]
-atlas = ExtResource("3_sheet")
-region = Rect2(32, 48, 32, 48)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_move_up_2"]
-atlas = ExtResource("3_sheet")
-region = Rect2(64, 48, 32, 48)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_move_up_3"]
-atlas = ExtResource("3_sheet")
-region = Rect2(96, 48, 32, 48)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_move_up_4"]
-atlas = ExtResource("3_sheet")
-region = Rect2(128, 48, 32, 48)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_move_up_5"]
-atlas = ExtResource("3_sheet")
-region = Rect2(160, 48, 32, 48)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_move_up_6"]
-atlas = ExtResource("3_sheet")
-region = Rect2(192, 48, 32, 48)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_move_up_7"]
-atlas = ExtResource("3_sheet")
-region = Rect2(224, 48, 32, 48)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_move_up_8"]
-atlas = ExtResource("3_sheet")
-region = Rect2(256, 48, 32, 48)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_move_up_9"]
-atlas = ExtResource("3_sheet")
-region = Rect2(288, 48, 32, 48)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_move_up_10"]
-atlas = ExtResource("3_sheet")
-region = Rect2(320, 48, 32, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_move_down_0"]
 atlas = ExtResource("3_sheet")
@@ -216,6 +172,50 @@ region = Rect2(256, 192, 32, 48)
 atlas = ExtResource("3_sheet")
 region = Rect2(288, 192, 32, 48)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_move_up_0"]
+atlas = ExtResource("3_sheet")
+region = Rect2(0, 48, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_move_up_1"]
+atlas = ExtResource("3_sheet")
+region = Rect2(32, 48, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_move_up_2"]
+atlas = ExtResource("3_sheet")
+region = Rect2(64, 48, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_move_up_3"]
+atlas = ExtResource("3_sheet")
+region = Rect2(96, 48, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_move_up_4"]
+atlas = ExtResource("3_sheet")
+region = Rect2(128, 48, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_move_up_5"]
+atlas = ExtResource("3_sheet")
+region = Rect2(160, 48, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_move_up_6"]
+atlas = ExtResource("3_sheet")
+region = Rect2(192, 48, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_move_up_7"]
+atlas = ExtResource("3_sheet")
+region = Rect2(224, 48, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_move_up_8"]
+atlas = ExtResource("3_sheet")
+region = Rect2(256, 48, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_move_up_9"]
+atlas = ExtResource("3_sheet")
+region = Rect2(288, 48, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_move_up_10"]
+atlas = ExtResource("3_sheet")
+region = Rect2(320, 48, 32, 48)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_q047a"]
 animations = [{
 "frames": [{
@@ -255,44 +255,6 @@ animations = [{
 "loop": 1,
 "name": &"idle",
 "speed": 8.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_move_up_0")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_move_up_1")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_move_up_2")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_move_up_3")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_move_up_4")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_move_up_5")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_move_up_6")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_move_up_7")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_move_up_8")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_move_up_9")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_move_up_10")
-}],
-"loop": 1,
-"name": &"move_up",
-"speed": 12.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -401,6 +363,44 @@ animations = [{
 "loop": 1,
 "name": &"move_right",
 "speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_move_up_0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_move_up_1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_move_up_2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_move_up_3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_move_up_4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_move_up_5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_move_up_6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_move_up_7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_move_up_8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_move_up_9")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_move_up_10")
+}],
+"loop": 1,
+"name": &"move_up",
+"speed": 12.0
 }]
 
 [sub_resource type="RectangleShape2D" id="Rect_body"]
@@ -414,8 +414,7 @@ weapon = ExtResource("2_pistol")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=37459172]
 position = Vector2(-1, -10)
 sprite_frames = SubResource("SpriteFrames_q047a")
-animation = &"idle"
-frame_progress = 0.6503103
+animation = &"move_down"
 
 [node name="Body" type="Polygon2D" parent="." unique_id=248249045]
 visible = false
