@@ -1,6 +1,9 @@
 [gd_scene format=3 uid="uid://c03d00gvrr71g"]
 
-[ext_resource type="Script" uid="uid://dl6h80ksa10hl" path="res://scripts/test_vn.gd" id="1_ktbfu"]
+[ext_resource type="Script" uid="uid://cwbmoqh0lla2e" path="res://scripts/test_vn.gd" id="1_ktbfu"]
+[ext_resource type="PackedScene" uid="uid://bmfvibeow3gik" path="res://scenes/visualnovel/textbox.tscn" id="2_fqggg"]
 
-[node name="TestVn" type="Node" unique_id=274608141]
+[node name="TestVn" type="Node2D" unique_id=718340637]
 script = ExtResource("1_ktbfu")
+
+[node name="Textbox" parent="." unique_id=309299078 instance=ExtResource("2_fqggg")]

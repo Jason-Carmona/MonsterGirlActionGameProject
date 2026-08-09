@@ -24,7 +24,7 @@ func load_dialogue(file_path: String):
 	current_data = json.data
 	current_index = 0
 	show_line()
-	
+	print("load_dialogue function complete.")
 # starts off at the beginning of the json and just goes down
 func start_dialogue(json_resource):
 	current_data = json_resource

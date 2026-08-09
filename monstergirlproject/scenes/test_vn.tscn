@@ -1,6 +1,11 @@
 [gd_scene format=3 uid="uid://7erocirbg7px"]
 
-[ext_resource type="Script" uid="uid://dl6h80ksa10hl" path="res://scripts/test_vn.gd" id="1_ph8og"]
+[ext_resource type="Script" uid="uid://cwbmoqh0lla2e" path="res://scripts/test_vn.gd" id="1_ph8og"]
+[ext_resource type="PackedScene" uid="uid://bmfvibeow3gik" path="res://scenes/visualnovel/textbox.tscn" id="2_umsyn"]
 
 [node name="TestVn" type="Node2D" unique_id=439118403]
 script = ExtResource("1_ph8og")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1776867636]
+
+[node name="Textbox" parent="." unique_id=309299078 instance=ExtResource("2_umsyn")]
