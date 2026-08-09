@@ -11,13 +11,19 @@
 	},
 	{
 		"speaker": "",
-		"text": "Choose wisely:",
+		"text": "What do you say?",
 		"portrait": ""
 	},
 	{
 		"choices": [
-			{"id": "choice_yes", "text": "Yes! Show me your wares!"},
-			{"id": "choice_no", "text": "No thanks, I'm broke."}
+			{
+				"id": "choice_yes",
+				"text": "Yes! Show me your wares!"
+			},
+			{
+				"id": "choice_no",
+				"text": "No thanks, I'm broke."
+			}
 		]
 	},
 	{
